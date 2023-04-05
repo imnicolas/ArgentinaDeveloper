@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="container-fluid">
+    <div class="row d-flex">
+      <section class="col-xxl-6">
+        <div class="flag-container text-center">
+          <img src="assets/img/bandera-talentos.svg" alt="Bandera Negra Sobre Nuestros Proyectos">
+          <h2 class="titulo text-center">CHUSME&Aacute; NUESTROS TALENTOS</h2>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="buscador">
+    <mat-form-field class="example-chip-list" appearance="outline">
+      <mat-label><i class="fas fa-search" style="padding-right: 5px;"></i>Busc&aacute; Tu Candidato Ideal</mat-label>
+      <mat-chip-list #chipList aria-label="Buscá por tecnologias">
+        <mat-chip *ngFor="let tecno of tecnologiasSeleccionadas" (removed)="remove(tecno)">
+          {{tecno}}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+        <input placeholder="Buscá por tecnologías..." #fruitInput [formControl]="fruitCtrl" [matAutocomplete]="auto"
+          [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="add($event)">
+      </mat-chip-list>
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+        <mat-option *ngFor="let tecno of tecnologias    " [value]="tecno">
+          {{tecno.nombre}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+  <div class="perfiles">
+    <div class="card" *ngFor="let perfil of perfiles">
+      <img src="{{perfil.img}}" class="card-img-top" alt="gatitox">
+      <div class="card-body">
+        <h5 class="card-title">{{perfil.nombre}}</h5>
+        <h6 class="card-title mb-2 ">{{perfil.descripcion}}</h6>
+        <h6 class="card-titlee mb-2 ">{{perfil.seniority}}</h6>
+        <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
+          <mat-chip *ngFor="let tecno of perfiles.tecnologias">
+            {{tecno.name}}
+          </mat-chip>
+        </mat-chip-list>
+        <a href="#" class="card-link"><i class="fa fa-github"></i></a>
+        <a href="#" class="card-link"><i class="fas fa-desktop"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+<footer><span>hola soy un footer</span></footer>

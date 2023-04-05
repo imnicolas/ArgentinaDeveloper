@@ -1,0 +1,45 @@
+table {
+  width: 100%;
+}
+.container{
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 90%;
+}
+.boton{
+  background-color: var(--color-primario);
+  color: var(--color-terciario);
+}
+.tabla{
+  width: 90%;
+  margin: auto;
+margin-bottom: 1rem;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+h1{
+  margin-bottom: 0;
+}
+.btn {
+  background-color: var(--color-primario);
+  border-color: var(--color-primario);
+  margin: 1px;
+  border: 1px solid transparent;
+}
+.mat-icon {
+  height: 10px;
+  width: 10px;
+  font-size: 18px;
+  line-height: 10px;
+  transform: translate(-4px, 3px);
+}
+.botones{
+  display: inline-flex;
+}
+

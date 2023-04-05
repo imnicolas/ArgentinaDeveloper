@@ -1,0 +1,223 @@
+/* === Contenedor general === */
+.container-fluid {
+  width: 100%;
+  margin-top: 150px;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  background-color: var(--color-primario);
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+@media screen and (max-width: 1400px) {
+  .container-fluid {
+    margin-top: 120px;
+    height: min-content;
+  }
+}
+
+/* === Contenedor de bandera con titulo === */
+.flag-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.flag-container img {
+  width: 700px;
+}
+
+h2 {
+  position: absolute;
+  top: 30px;
+  left: 155px;
+  font-family: var(--font-bebas);
+  font-size: 60px;
+}
+i{
+  font-size: 18px;
+}
+
+/* === Texto columna izquierda === */
+p {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0;
+  top: 8rem;
+  left: 155px;
+  font-size: 26px;
+  font-family: var(--font-ibm);
+  line-height: 2;
+  text-align: justify;
+}
+
+@media screen and (max-width: 1400px) {
+  .flag-container {
+    top: 4rem;
+    margin-top: 30px;
+  }
+
+  p {
+    max-width: 75%;
+    top: 4rem;
+    left: 100px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .flag-container img {
+    max-width: 600px;
+  }
+
+  h2 {
+    font-size: 3rem;
+    left: 12vw;
+    top: 30%;
+  }
+
+  p {
+    font-size: 16px;
+    left: 10vw;
+    line-height: 1.5;
+  }
+
+  .container-fluid {
+    margin-top: 120px;
+    height: min-content;
+  }
+}
+@media screen and (max-width: 650px) {
+  .flag-container img {
+    max-width: 435px;
+  }
+  h2 {
+    font-size: 2.5rem;
+    left: 12vw;
+    top: 25%;
+  }
+  p {
+    font-size: 2px;
+    left: 8vw;
+    line-height: 1.2;
+  }
+
+  .container-fluid {
+    margin-top: 120px;
+    height: min-content;
+  }
+}
+.proyectos {
+  background-color: var(--color-primario);
+  margin-right: 0;
+  margin-left: 0;
+  max-width: 100%;
+  display: flex;
+  padding-top: 20vh;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: var(--font-bebas);
+  color: var(--color-terciario);
+  text-align: center;
+  border-bottom: 1px solid white;
+  /*  text-decoration: underline;
+  text-decoration-thickness: 1px; */
+  padding: 0 2em;
+  bottom: 0;
+  padding-bottom: 0px;
+  padding-top: 1em;
+}
+
+.subtitulo {
+  font-family: var(--font-ibm);
+  color: var(--color-terciario);
+  text-align: center;
+}
+
+h5{
+  font-size: 18px;
+}
+h6{
+  font-size: 15px;
+}
+
+h5,
+h6,
+a {
+  font-family: var(--font-ibm);
+  color: var(--color-terciario);
+}
+
+
+.card-img {
+  max-width: 220px;
+  max-height: 125px;
+  min-width: 220px;
+  min-height: 120px;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  object-fit: cover;
+}
+
+.card {
+  min-width: 250px;
+  max-width: 250px;
+  max-height: 380px;
+  min-height: 380px;
+  margin-bottom: 3em;
+  margin-right: 1em;
+  margin-left: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  /*  background-color: rgb(255, 255, 255, 0.7); */
+  background-color: var(--color-secundario);
+  width: 100%;
+  border-radius: 10%;
+  --bs-card-border-color: none;
+  /* box-shadow: 2px 3px 5px 1px var(--color-secundario); */
+  box-shadow: 0px 30px 35px -10px var(--color-secundario);
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 0px 30px 30px -15px rgba(0, 0, 0, 0.25),
+    0px 30px 35px -15px rgba(0, 0, 0, 0.22);
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+p {
+  color: var(--color-terciario);
+}
+
+@media screen and (max-width: 500px) {
+  .flag-container img {
+    max-width: 355px;
+  }
+  h2 {
+    font-size: 2rem;
+    left: 12vw;
+    top: 25%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .flag-container img {
+    max-width: 265px;
+  }
+  h2 {
+    font-size: 1.5rem;
+    left: 12vw;
+    top: 10%;
+  }
+}

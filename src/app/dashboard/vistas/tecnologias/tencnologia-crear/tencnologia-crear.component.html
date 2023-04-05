@@ -1,0 +1,13 @@
+<form class="example-form"  [formGroup]="agregarForm" >
+  <h1 class="text-center">Agregar Nueva Tecnología</h1>
+  <br>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="name" name="name">
+  </mat-form-field>
+  <div class="example-button-row">
+    <button mat-raised-button class="agregar" color="primary" (click)="agregarTecno()">Agregar Perfil</button>
+    <button mat-raised-button color="warn" routerLink="/admin/tecnologias">Cancelar</button>
+  </div>
+</form>
+

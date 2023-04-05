@@ -1,0 +1,32 @@
+<mat-sidenav-container class="sidenav-container" *ngIf="usuario; else loggedOut">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar><h1><a routerLink="/admin">Dashboard </a></h1></mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="perfiles">Perfiles</a>
+      <a mat-list-item routerLink="proyectos" >Proyectos</a>
+      <a mat-list-item routerLink="talentos" >Talentos</a>
+      <a mat-list-item routerLink="tecnologias" >Tecnologías</a>
+      <a mat-list-item (click)="salir()">Salir</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="toolbar" color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Argentina Developers {{usuario.nombreUsuario}}</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<ng-template #loggedOut>
+  Please login.
+</ng-template>

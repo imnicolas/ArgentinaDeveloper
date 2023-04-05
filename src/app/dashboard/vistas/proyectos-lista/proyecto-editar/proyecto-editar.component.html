@@ -1,0 +1,52 @@
+<form class="example-form">
+  <h1 class="text-center">Editar proyecto: {{proyecto.nombre}}</h1>
+  <br>
+  <h1 class="text-center">Datos del Proyecto</h1>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Nombre Proyecto</mat-label>
+    <input matInput [(ngModel)]="proyecto.nombre" [ngModelOptions]="{standalone: true}" >
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Descripcion Proyecto</mat-label>
+    <textarea matInput [(ngModel)]="proyecto.descripcion" [ngModelOptions]="{standalone: true}"></textarea>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>URL Demo</mat-label>
+    <input matInput [(ngModel)]="proyecto.demo" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>URL Repositorio</mat-label>
+    <input matInput [(ngModel)]="proyecto.repo" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+  <mat-label>Imagen</mat-label>
+    <input type="file" accept="image/*" alife-file-to-base64 (onFileChanged)="obtener($event)" name="img" class="form-control">
+    <img src="{{proyecto.img}}" height="150px" width="200px">
+  <br>
+  <h5 class="text-left">Tecnologias</h5>
+   <mat-chip-list aria-label="Dog selection" *ngFor="let tecno of proyecto.tecnologias">
+    <mat-chip>
+      {{tecno.name}}
+    </mat-chip>
+  </mat-chip-list>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Tecnologías</mat-label>
+    <mat-select multiple [compareWith]="compareFn" [(ngModel)]="proyecto.tecnologias"  [ngModelOptions]="{standalone: true}">
+      <mat-option *ngFor="let tecno of tecnologias" [value]="tecno">{{tecno.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <h1 class="text-center">Participantes</h1>
+    <h5 class="text-left">Perfiles</h5>
+    <mat-form-field appearance="fill">
+      <mat-label>Participantes</mat-label>
+      <mat-select multiple [compareWith]="comparePerfiles" [(ngModel)]="proyecto.perfiles"  [ngModelOptions]="{standalone: true}">
+        <mat-option *ngFor="let perfil of perfiles" [value]="perfil">{{perfil.nombre}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+  <div class="example-button-row">
+    <button mat-raised-button class="agregar" color="primary" (click)="editarProyecto(proyecto)">Editar</button>
+    <button mat-raised-button color="warn" routerLink="/admin/proyectos">Cancelar</button>
+  </div>
+</form>
+

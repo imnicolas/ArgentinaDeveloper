@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>¿Estás seguro que desea eliminar el proyecto: {{proyecto.nombre}}</h1>
+<div mat-dialog-content>
+  <p></p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button  (click)="borrar()" cdkFocusInitial>Ok</button>
+</div>
+

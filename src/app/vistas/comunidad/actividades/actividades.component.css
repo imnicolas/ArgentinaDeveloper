@@ -1,0 +1,151 @@
+.containercolor {
+    height: 100vh;
+    width: 99.5vw;
+    background-color:#131313 ;
+    padding: 0;
+}
+
+.triangle-topleft {
+    border-top: 100vh solid #6204AC;
+    border-right: 99vw solid transparent;
+    padding: 0;
+}
+
+
+section {
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction:row;
+    position: absolute;
+
+}
+.title-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+
+}
+h2 {
+    z-index: 1;
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 96px;
+
+}
+
+.cards-container {
+    padding: 65px;
+    padding-top: 0px!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+
+
+}
+.card1 , .card2, .card3 {
+    margin-top: 10px;
+    padding: 25px;
+    z-index: 1;
+    height: 450px;
+    width: 450px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 5px solid #D9D9D9;
+    border-radius: 30px;
+    word-wrap: break-word;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+h3 {
+
+margin-top: 8px;
+font-family: 'Bebas Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 4vh;
+/* identical to box height */
+
+text-align: center;
+
+color: #FFFFFF;
+
+}
+
+p {
+
+font-family: 'IBM Plex Sans Thai';
+font-style: normal;
+font-weight: 400;
+font-size: 3vh;
+line-height: 2rem;
+text-align: center;
+
+color: #FFFFFF;
+
+}
+
+.col-xl-4, .col-6 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row {
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 834px) {
+    .cards-container{
+        padding: 30px;
+        position: relative;
+    }
+    h2{
+        font-size: 3.5rem;
+    }
+    h3 {
+        font-size: 2.3rem;
+        margin-bottom: 5px;
+    }
+    p {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    h2 {
+        font-size: 55px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .card1 , .card2, .card3 {
+        height: 300px;
+        width: 300px;
+    }
+    h2 {
+        font-size: 3.1rem;
+    }
+    h3{
+        font-size: 1.5rem;
+    }
+    p{
+        font-size: 1rem;
+    }
+}

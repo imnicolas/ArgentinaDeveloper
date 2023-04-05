@@ -1,0 +1,201 @@
+/* === ESTILOS GLOBALES ===*/
+* {
+  --black-opacity: rgb(19, 19, 19, 0.98);
+}
+
+ul {
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* ==== HEADER ==== */
+.custom-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3000;
+  display: flex;
+  padding-top: 8px;
+  padding-bottom: 4px;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--black-opacity);
+}
+
+h1 {
+  font-family: "Alata", sans-serif;
+  margin: 0;
+}
+
+/* ==== ESTILO DE BOTONES ==== */
+
+.boton-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+  margin: .5rem 0;
+  
+  border: solid 1px var(--color-primario);
+  border-radius: 1rem;
+  background-color: var(--color-primario);
+  
+  font-size: 2em;
+  color: var(--color-terciario);
+  text-align: center;
+}
+
+@media screen and (max-width:850px) {
+  .boton-container {
+    font-size: 1.5em;
+    width: 50px;
+    height: 50px;
+    border-radius: .6rem;
+  }
+}
+
+/* ==== ESTILOS DE NAV DESKTOP ==== */
+.desktop-nav {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.desktop-list {
+  white-space: nowrap;
+  padding: .8em 0;
+  border-bottom: solid 1px var(--color-terciario);
+}
+
+.desktop-list li {
+  position: relative;
+  display: inline-block;
+  margin: 0 3.5vw;
+  padding: 0.5rem 1rem;
+  user-select: none;
+}
+
+/* ==== ESTILOS DE NAV PARA MOBILE ==== */
+
+.mobile-nav {
+  display: none;
+}
+
+.burger-button {
+  text-align: center;
+  padding: 6px 12px;
+}
+
+@media screen and (max-width:850px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 3;
+  }
+
+  .mobile-list {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 320px;
+    height: 88vh;
+    padding: 4rem 2rem 2rem;
+    text-align: right;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background-color: var(--black-opacity);
+    transform: translateX(0%);
+    transition: transform ease .5s;
+  }
+
+  .mobile-list li {
+    margin-bottom: 4rem;
+    list-style: none;
+    font-size: 1.2em;
+  }
+
+  .mobile-list span {
+    position: relative;
+    padding: 0.8rem;
+  }
+
+  .mobile-list span::before {
+    content: "";
+    position: absolute;
+    width: 230px;
+    border-bottom: solid 1px var(--color-primario);
+  }
+}
+/* ==== CLASE PARA BOTON DE NAV ==== */
+.hide {
+  transform: translateX(-100%);
+  transition: transform ease .5s;
+}
+
+/* ==== EFECTOS HOVER Y FOCUS ====*/
+
+
+li:hover,
+.logo:hover {
+  cursor: pointer;
+}
+
+li:focus {
+  outline: none;
+}
+
+/* ==== ANIMACIONES ==== */
+li span:after,
+li span:before {
+  content: "";
+  position: absolute;
+  display: block;
+  border: 0px solid transparent;
+  width: 0%;
+  height: 0%;
+  transition: all 0.3s ease;
+}
+
+li span:after {
+  width: 0%;
+  height: 0%;
+  top: 0;
+  left: 0;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+}
+
+li span:before {
+  width: 0%;
+  height: 0%;
+  right: 0;
+  bottom: 0;
+  border-bottom: 2px solid transparent;
+  border-right: 2px solid transparent;
+}
+
+li:hover span::before,
+li:hover span::after {
+  width: 15px;
+  height: 15px;
+  border-color: var(--color-primario);
+}
+
+li:focus span::before,
+li:focus span::after {
+  width: 15px;
+  height: 15px;
+  border-color: var(--color-primario);
+}

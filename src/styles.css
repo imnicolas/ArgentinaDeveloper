@@ -1,0 +1,54 @@
+/* Importamos las fuentes */
+*{
+  margin:0;
+  padding: 0;
+  /* background-color: black; */
+}
+
+
+/* body{
+  background-color: black;
+} */
+
+@font-face {
+  font-family: 'IBM Plex';
+  src: local('IBM Plex'),url('assets/fonts/IBM_Plex_Sans_Thai_Looped/IBMPlexSansThaiLooped-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src:  local('Bebas Neue'),url('assets/fonts/bebas_neue/BebasNeue-Regular.woff2') format('woff2');
+}
+
+@font-face{
+  font-family: 'Alata';
+  src: local('Alata'), url('assets/fonts/Alata/Alata-Regular.ttf') format('truetype');
+}
+
+/* Definimos las variables de fuente y colores */
+:root {
+  --color-primario: #6204AC;
+  --color-secundario: #131313;
+  --color-terciario: #ffffff;
+  --color-cuarto: rgba(217, 217, 217);
+  --color-quinto: rgba(19, 19, 19, 0.80);
+  --color-sexto: #043DAC;
+
+  --font-ibm:'IBM Plex', sans-serif;
+  --font-bebas: 'Bebas Neue', sans-serif;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Definimos el color de todos los fondos a negro, y el texto a blanco de forma global */
+html, body {
+  color: var(--color-terciario) !important;
+  background-color: var(--color-secundario) !important;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,68 @@
+<form class="example-form"  [formGroup]="agregarForm" (ngSubmit)="agregarPerfil()">
+  <h1 class="text-center">Agregar Nuevo Perfil</h1>
+  <br>
+  <h1 class="text-center">Datos Personales</h1>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Nombre y Apellido</mat-label>
+    <input matInput formControlName="nombre" name="nombre">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Lugar de Residencia</mat-label>
+    <input matInput formControlName="ubicacion" name="ubicacion">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Descripcion</mat-label>
+    <textarea matInput formControlName="descripcion" name="descripcion"></textarea>
+  </mat-form-field>
+  <mat-label>Imagen</mat-label>
+  <input type="file" accept="image/*" alife-file-to-base64 (onFileChanged)="obtener($event)"
+  class="form-control"  formControlName="img" name="img">
+  <img src="{{perfil.img}}" height="150px" width="200px">
+  <br>
+  <h1 class="text-center">Datos de Contacto</h1>
+     <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="contacto.email" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Github</mat-label>
+      <input matInput [(ngModel)]="contacto.github" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>LinkedIn</mat-label>
+      <input matInput [(ngModel)]="contacto.linkedin" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Portfolio</mat-label>
+      <input matInput formControlName="portafolio" name="portafolio">
+    </mat-form-field>
+
+    <br>
+    <h1 class="text-center">Datos de Técnicos</h1>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Seniority</mat-label>
+      <input matInput formControlName="seniority" name="seniority">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Orientacion</mat-label>
+      <input matInput formControlName="puesto" name="puesto">
+    </mat-form-field>
+
+    <h5 class="text-left">Tecnologías</h5>
+<!--     <mat-chip-list aria-label="Dog selection" *ngFor="let tecno of tecnologias">
+      <mat-chip>
+        {{tecno.nombre}}
+      </mat-chip>
+    </mat-chip-list> -->
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Tecnologías</mat-label>
+      <mat-select formControlName="tecnologias" multiple>
+        <mat-option *ngFor="let tecno of tecnologias" [value]="tecno">{{tecno.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  <div class="example-button-row">
+    <button mat-raised-button class="agregar" color="primary">Agregar Perfil</button>
+    <button mat-raised-button color="warn" routerLink="/admin/perfiles">Cancelar</button>
+  </div>
+</form>

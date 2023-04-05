@@ -1,0 +1,136 @@
+/* === Contenedor general === */
+.container-fluid {
+  width: 100%;
+  margin-top: 150px;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  background-color: var(--color-primario);
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* === Contenedor de bandera con titulo === */
+.flag-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.flag-container img {
+  width: 700px;
+}
+
+h2 {
+  position: absolute;
+  top: 30px;
+  left: 155px;
+  font-family: var(--font-bebas);
+  font-size: 60px;
+}
+
+/* === Texto columna izquierda === */
+p {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0;
+  top: 16rem;
+  left: 89px;
+  font-size: 26px;
+  font-family: var(--font-ibm);
+  line-height: 2;
+  padding-top: 30px;
+}
+
+
+@media screen and (max-width: 1400px) {
+  .container-fluid {
+    margin-top: 120px;
+    height: 175vh;
+  }
+  .flag-container {
+    top: 4rem;
+    margin-top: 30px;
+  }
+
+  p {
+    max-width: 75%;
+    top: 4rem;
+    left: 100px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .flag-container img {
+    max-width: 600px;
+  }
+
+  h2 {
+    font-size: 3rem;
+    left: 12vw;
+    top: 25%;
+  }
+
+  p {
+    font-size: 16px;
+    left: 10vw;
+    line-height: 1.5;
+  }
+  .container-fluid {
+    margin-top: 120px;
+    height: 140vh;
+  }
+  .discord-frame {
+    height: 80vh;
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+  .flag-container img {
+    max-width: 435px;
+  }
+  h2 {
+    font-size: 2.5rem;
+    left: 12vw;
+    top: 25%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .flag-container img {
+    max-width: 355px;
+  }
+  h2 {
+    font-size: 2rem;
+    left: 12vw;
+    top: 25%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .flag-container img {
+    max-width: 285px;
+  }
+  h2 {
+    font-size: 1.8rem;
+    left: 12vw;
+    top: 15%;
+  }
+
+}
+
+/* === Frame de Discord columna derecha === */
+.discord-frame {
+  width: 80%;
+  height: 100vh;
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .discord-frame {
+    max-width: 75%;
+    margin-top: 10vh;
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,19 @@
+* {
+    background-color: var(--color-secundario);
+    height: 75vh;
+    height: min-content;
+    max-width: 100%;
+}
+
+.container{
+  height: 25vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.banner{
+  font-family: 'IBM Plex Sans Thai', sans-serif;
+  font-size: small;
+  color: rgb(169, 164, 164);
+}

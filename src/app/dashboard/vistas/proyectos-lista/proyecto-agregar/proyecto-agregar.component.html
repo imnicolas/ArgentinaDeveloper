@@ -1,0 +1,46 @@
+<form class="example-form" [formGroup]="agregarForm" (ngSubmit)="agregarProyecto()">
+  <h1 class="text-center">Agregar Nuevo Proyecto</h1>
+  <br>
+  <h1 class="text-center">Datos del Proyecto</h1>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombre" name="nombre">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>descripcion</mat-label>
+    <textarea matInput formControlName="descripcion" name="descripcion"></textarea>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>demo</mat-label>
+    <input matInput formControlName="demo" name="demo">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>repo</mat-label>
+    <input matInput formControlName="repo" name="repo">
+  </mat-form-field>
+  <mat-label>Imagen</mat-label>
+  <input type="file" accept="image/*" alife-file-to-base64 (onFileChanged)="obtener($event)"
+  class="form-control"  formControlName="img" name="img">
+  <img src="{{proyecto.img}}" height="150px" width="200px">
+  <br>
+  <h5 class="text-left">Perfiles</h5>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Perfiles</mat-label>
+    <mat-select formControlName="perfiles" multiple>
+      <mat-option *ngFor="let perfil of perfiles" [value]="perfil">{{perfil.nombre}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <h5 class="text-left">Tecnologías</h5>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Tecnologías</mat-label>
+    <mat-select formControlName="tecnologias" multiple>
+      <mat-option *ngFor="let tecno of tecnologias" [value]="tecno">{{tecno.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="example-button-row">
+    <button mat-raised-button class="agregar" color="primary">Agregar Perfil</button>
+    <button mat-raised-button color="warn" routerLink="/admin/perfiles">Cancelar</button>
+  </div>
+</form>

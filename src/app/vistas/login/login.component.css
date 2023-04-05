@@ -1,0 +1,70 @@
+.body{
+  background-color: var(--color-secundario);
+}
+.editable-item {
+  border-color: #198754 !important;
+}
+label, h1{
+  color: var(--color-primario);
+}
+h1 {
+  margin-top: 1rem;
+}
+input{
+  background-color: var(--color-cuarto);
+}
+button {
+  margin: 3px;
+  background-color: var(--color-primario);
+  color: var(--color-terciario);
+}
+
+
+.vertical-center {
+  min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+
+@media screen and (min-width: 766px) {
+  form {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  form {
+    font-size: 1rem !important;
+    padding: 1rem !important;
+  }
+}
+
+form {
+  position: relative;
+  z-index: 1;
+}
+
+.toFront {
+  z-index: 50;
+}
+
+/* Estilos del icono para mostrar/ocultar */
+.eye-icon {
+  position: absolute;
+  right: 3.7rem;
+}
+
+/* Modificamos la distancia a la derecha para el responsive */
+@media screen and (max-width: 766px) {
+  .eye-icon {
+    right: 2rem;
+  }
+}
+
+/* Sobrescribimos estilos de angular para que no tape el ojo */
+#password.is-valid, #password.is-invalid {
+  background-position: right calc(2.3em + 0.1875rem) center !important;
+}

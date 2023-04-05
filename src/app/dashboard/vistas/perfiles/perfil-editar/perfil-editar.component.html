@@ -1,0 +1,67 @@
+<form class="example-form">
+  <h1 class="text-center">Editar Perfil de {{perfil.nombre}}</h1>
+  <br>
+  <h1 class="text-center">Datos Personales</h1>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Nombre y Apellido</mat-label>
+    <input matInput [(ngModel)]="perfil.nombre" [ngModelOptions]="{standalone: true}" >
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Lugar de Residente</mat-label>
+    <input matInput [(ngModel)]="perfil.ubicacion" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Descripcion</mat-label>
+    <textarea matInput [(ngModel)]="perfil.descripcion" [ngModelOptions]="{standalone: true}"></textarea>
+  </mat-form-field>
+    <mat-label>Imagen</mat-label>
+    <input type="file" accept="image/*" alife-file-to-base64 (onFileChanged)="obtener($event)" name="img" class="form-control">
+    <img src="{{perfil.img}}" height="150px" width="200px">
+    <br>
+  <h1 class="text-center">Datos de Contacto</h1>
+     <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="perfil.contacto.email" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Github</mat-label>
+      <input matInput [(ngModel)]="perfil.contacto.github" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>LinkedIn</mat-label>
+      <input matInput [(ngModel)]="perfil.contacto.linkedin" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Portfolio</mat-label>
+      <input matInput [(ngModel)]="perfil.portafolio" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <br>
+    <h1 class="text-center">Datos de Técnicos</h1>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Seniority</mat-label>
+      <input matInput [(ngModel)]="perfil.seniority" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Orientacion</mat-label>
+      <input matInput [(ngModel)]="perfil.puesto" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <h5 class="text-left">Tecnologias</h5>
+    <!-- <mat-chip-list aria-label="Dog selection" *ngFor="let tecno of perfil.tecnologias">
+      <mat-chip>
+        {{tecno.nombre}}
+      </mat-chip>
+    </mat-chip-list> -->
+    <mat-form-field appearance="fill">
+      <mat-label>Tecnologías</mat-label>
+      <mat-select multiple [compareWith]="compareFn" [(ngModel)]="perfil.tecnologias"  [ngModelOptions]="{standalone: true}">
+        <mat-option *ngFor="let tecno of tecnologias" [value]="tecno">{{tecno.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+  <div class="example-button-row">
+    <button mat-raised-button class="agregar" color="primary" (click)="editarPerfil(perfil)">Editar Formulario</button>
+    <button mat-raised-button color="warn" routerLink="/admin/perfiles">Cancelar</button>
+  </div>
+</form>

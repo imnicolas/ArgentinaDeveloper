@@ -1,0 +1,36 @@
+<header class="custom-header">
+    <h1 class="boton-container" tabindex="0">AD</h1>
+  <nav class="desktop-nav">
+    <ul class="desktop-list">
+      <li tabindex="0" routerLink="/"><span>Home</span></li>
+      <li tabindex="0" routerLink="/comunidad"><span>Comunidad</span></li>
+      <li tabindex="0" routerLink="/proyectos"><span>Proyectos</span></li>
+      <li tabindex="0" routerLink="/portal-empleo"><span>Portal de Talentos</span></li>
+    </ul>
+  </nav>
+  <nav class="mobile-nav">
+    <div class="boton-container">
+      <i id="toggleButton" tabindex="0" class="burger-button" [class]="isOpen? 'bi bi-x-lg' : 'bi bi-list'" (click)="isOpen = !isOpen" ></i>
+    </div>
+    <ul class="mobile-list" [class]="{'hide': !isOpen}">
+      <li tabindex="0" routerLink="/"><span>Home</span></li>
+      <li tabindex="0" routerLink="/comunidad"><span>Comunidad</span></li>
+      <li tabindex="0" routerLink="/proyectos"><span>Proyectos</span></li>
+      <li tabindex="0" routerLink="/portal-empleo"><span>Portal de Talentos</span></li>
+    </ul>
+  </nav>
+  <div class="icons">
+    <!-- 
+      Icono para un futuro linkedin uwu
+      <a href="https://linkedin.com" target="_blank"
+      ><i class="bi bi-linkedin"></i
+        ></a>
+      -->
+      <div class="boton-container">
+        <a href="https://discord.gg/c8a58F3Yse" target="_blank"
+          ><i class="bi bi-discord"></i
+        ></a>
+      </div>
+  </div>
+</header>
+

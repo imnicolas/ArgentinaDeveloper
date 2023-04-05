@@ -1,0 +1,135 @@
+.container {
+  background-color: var(--color-primario);
+  margin-right: 0;
+  margin-left: 0;
+  max-width: 100%;
+  z-index: 0;
+}
+
+h3 {
+  font-family: var(--font-bebas);
+  color: var(--color-terciario);
+  text-align: center;
+  font-size: 2.9rem;
+  line-height: 35pt;
+  margin: 0;
+  /*  text-decoration: underline;
+  text-decoration-thickness: 1px; */
+  bottom: 0;
+  padding-bottom: 0px;
+  padding-top: 1em;
+}
+
+.subtitulo {
+  margin-top: 5px;
+  font-size: 1.5rem;
+  font-family: var(--font-ibm);
+  color: var(--color-terciario);
+  text-align: center;
+}
+
+h5,
+h6,
+a {
+  font-family: var(--font-ibm);
+  color: var(--color-terciario);
+}
+
+img {
+  max-width: 220px;
+  max-height: 125px;
+  min-width: 220px;
+  min-height: 120px;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  object-fit: cover;
+}
+
+.card {
+  max-width: 220px;
+  max-height: 260px;
+  margin-bottom: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  /*  background-color: rgb(255, 255, 255, 0.7); */
+  background-color: var(--color-secundario);
+  width: 100%;
+  border-radius: 10%;
+  --bs-card-border-color: none;
+  /* box-shadow: 2px 3px 5px 1px var(--color-secundario); */
+  box-shadow: 0px 30px 25px -10px var(--color-secundario);
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: scale(0.98, 0.98);
+  box-shadow: 0px 30px 30px -15px rgba(0, 0, 0, 0.25),
+    0px 30px 35px -15px rgba(0, 0, 0, 0.22);
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+h5{
+  font-size: 1.5rem;
+}
+
+p {
+  color: var(--color-terciario);
+  font-size: 1.2rem;
+}
+
+.carousel {
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+::ng-deep .owl-theme .owl-nav [class*=owl-] {
+  color: #FFF;
+  font-size: 14px;
+  margin: 5px;
+  padding: 4px 7px;
+  background: var(--color-secundario) !important;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+::ng-deep .owl-item {
+  text-align: center;
+  justify-content: center;
+}
+
+::ng-deep .owl-carousel.owl-drag .owl-item {
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+  display: flex;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hr{
+  width: 65%;
+  display: inline-block;
+}
+
+@media screen and (max-width:960px)  {
+  h3{
+    font-size: 2.1rem;
+  }
+  .subtitulo{
+    font-size: 1.2rem;
+  }
+  .hr{
+    width: 80%;
+  }
+
+}
+
+

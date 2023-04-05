@@ -1,0 +1,14 @@
+<form class="example-form" >
+  <h1 class="text-center">Editar Tecnología: {{tecnologia.name}}</h1>
+  <br>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input matInput [(ngModel)]="tecnologia.name" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+  <div class="example-button-row">
+    <button mat-raised-button class="agregar" color="primary" (click)="editarTecno()">Editar Tecno</button>
+    <button mat-raised-button color="warn" (click)="onNoClick()">Cancelar</button>
+  </div>
+</form>
+
+
